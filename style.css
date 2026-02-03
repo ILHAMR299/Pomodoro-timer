@@ -1,114 +1,97 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'roboto', sans-serif;
+  background: #f5f5f5;
 }
+
 .container {
   width: 400px;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: bisque;
-  padding: 50px 20px;
-  border-radius: 15px;
+  padding: 30px;
+  background: bisque;
+  border-radius: 20px;
+  text-align: center;
 }
+
 .timer-container {
-  margin-bottom: 50px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  width: 80%;
+  margin-bottom: 30px;
 }
+
 .timer-container button {
   padding: 10px;
   border: none;
   border-radius: 10px;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0 1);
-  color: #ffffff;
+  background: #f3486d;
+  color: white;
   font-weight: bold;
-  background-color: #f3486d;
   cursor: pointer;
 }
-.timer-container button:hover {
-  transform: scale(1.2);
-}
 
-/* warna buat button pomodoro */
 .timer-container .active {
-  background-color: #db2a34;
+  background: #db2a34;
 }
 
-#startbtn,
-#pausebtn,
-#resetbtn {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
-  color: #ffffff;
-  font-weight: bold;
-  background-color: #f3486d;
-  cursor: pointer;
-}
-#startbtn {
-  background-color: #008000;
-}
-#pausebtn {
-  background-color: #db2a34;
-}
-#resetbtn {
-  background-color: #ffa600;
-}
 .progressbar {
-  height: 180px;
   width: 180px;
+  height: 180px;
+  margin: 0 auto 30px;
   border-radius: 50%;
-  background: url('/asset/anime.gif') center/cover;
-  mask: conic-gradient(#000 0deg, #000 var(--progress), transparent 0);
-  -webkit-mask: conic-gradient(#000 0deg, #000 var(--progress), transparent 0);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: pulse 3s infinite;
-  transition: all ease;
-  margin-bottom: 50px;
-}
-#progressbar-inner {
-  height: 90%;
-  width: 90%;
-  background: #03033f;
-  border-radius: 50%;
+  background: conic-gradient(#db2a34 var(--progress, 0deg), #ddd 0deg);
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.progressbar-inner {
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  background: url('/asset/anime.gif') center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .progressbar-number {
-  font-family: 'Bitcount Single', sans-serif;
-  font-size: 2.5rem;
+  font-family: 'Bitcount Single', monospace;
+  font-size: 3rem;
   font-weight: 700;
   letter-spacing: 3px;
-  color: #fff;
-  text-shadow:
-    0 0 6px rgba(38, 230, 73, 0.8),
-    0 0 12px rgba(22, 240, 41, 0.5);
+  color: #ffffff;
+
+  /* shadow sederhana & aman */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+
+  position: relative;
+  z-index: 2;
 }
 
+.function-buttons button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-@keyframes pulse {
-  0% {
-    transition: scale(0.97);
-  }
-  50% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0.97);
-  }
+#startbtn {
+  background: green;
+}
+#pausebtn {
+  background: crimson;
+}
+#resetbtn {
+  background: orange;
 }
