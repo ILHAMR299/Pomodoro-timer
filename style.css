@@ -56,7 +56,7 @@ body {
   width: 85%;
   height: 85%;
   border-radius: 50%;
-  background: url('/asset/anime.gif') center / cover no-repeat;
+  background: url('./asset/anime.gif') center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
